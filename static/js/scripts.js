@@ -1,6 +1,6 @@
 // scripts.js
 
-var MAX = 9;
+var MAX = 10;
 
 // reset the input fields to be blank
 function reset (){
@@ -12,6 +12,7 @@ function reset (){
 
 // randomly select a new picture
 function newPic(){
+
 	// get a new picture to display!
 	pic_num = Math.floor(Math.random() * MAX);
 	src = "/static/images/Cartoon" + pic_num + ".jpg"
@@ -25,19 +26,18 @@ newPic();
 
 // the submit button has been clicked!
 $( "#submit_button" ).click(function() {
-	cap = $( "#caption-input" ).val();
-	maj = $( "#major-input" ).val();
+	caption_input = $( "#caption-input" ).val();
+	major_input = $( "#major-input" ).val();
 	ID = parseInt($( "#cartoon_image" ).attr('data-name'));
 
 	// if both fields are complete!
-	if (cap && maj){
-		alert("Thank you for submitting your response!");
-		console.log("Caption: " + cap + " Major: " + maj);
+	if (caption_input && major_input){
+		console.log("Picture: " + ID + " Caption: " + caption_input + " Major: " + major_input);
 
 		// make the ajax call
 		$.ajax({
             url: '/createCaption',
-            data: { caption: cap, major: maj, picID: ID},
+            data: { caption: caption_input, major: major_input, picID: ID},
             type: 'POST',
             success: function(response) {
                 console.log(response);
@@ -53,11 +53,11 @@ $( "#submit_button" ).click(function() {
 	}
 
 	// if caption field is empty
-	if (!cap){
+	if (!caption_input){
 		$( "#caption-input" ).addClass("incomplete");
 	}
 	// if major field is empty
-	if (!maj){
+	if (!major_input){
 		$( "#major-input" ).addClass("incomplete");
 	}
 });
@@ -74,6 +74,7 @@ $( "#skip_button" ).click(function() {
 });
 
 
+// welcome the user and make them aware of the study
 alert("Welcome!\n" + 
 	"Please create a unique funny caption, enter your college major and submit!\n" +
 	"Thank you for your participation in this psychological research study")
