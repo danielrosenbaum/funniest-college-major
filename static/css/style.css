@@ -1,0 +1,46 @@
+/*style.css*/
+
+body {
+	margin: 0;
+}
+
+#title {
+	display: flex;
+	width: 100%;
+	height: 75px;
+	justify-content: center;
+	align-items: center;
+	background-color: skyblue;
+	margin: 0;
+}
+
+#cartoon_pic {
+	padding-top: 20px;
+	display: flex;
+	width: 100%;
+	height: 500px;
+	justify-content: center;
+}
+
+#input {
+	padding-top: 15px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.incomplete {
+	border-color: red;
+}
+
+.input_field {
+	width: 400px;
+	font-size: 15px;
+	margin: 10px;
+}
+
+.button {
+	width: 100px;
+}
