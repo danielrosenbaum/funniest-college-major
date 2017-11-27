@@ -1,6 +1,6 @@
 // scripts.js
 
-var MAX = 4;
+var MAX = 9;
 
 // reset the input fields to be blank
 function reset (){
