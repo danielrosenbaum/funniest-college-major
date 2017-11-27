@@ -31,6 +31,14 @@ body {
 	flex-direction: column;
 }
 
+#submit_button {
+	width: 100px;
+}
+
+#skip_button {
+	width: 140px;
+}
+
 .incomplete {
 	border-color: red;
 }
@@ -39,8 +47,4 @@ body {
 	width: 400px;
 	font-size: 15px;
 	margin: 10px;
-}
-
-.button {
-	width: 100px;
 }
